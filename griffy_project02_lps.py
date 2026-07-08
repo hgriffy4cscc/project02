@@ -1,4 +1,13 @@
-"""griffy_project01.py
+"""griffy_project02.py
+
+Project 2: (more emphasis on portfolio presentation->architectural justification); any project that demos concepts from 8-11, ideally by refactoring and building on Project 1
+
+    functions
+    object-oriented (classes)
+    file i/o
+    exception handling
+    data persistence
+    automated testing
 
 This project demonstrates basic python concepts and practices by providing
 an interactive search and display program for a collection of vinyl records.
