@@ -11,6 +11,10 @@ Project 2: (more emphasis on portfolio presentation->architectural justification
 
 This project demonstrates basic python concepts and practices by providing
 an interactive search and display program for a collection of vinyl records.
+Specifically, it demonstrates object-oriented programming.
+Additional functionality include:
+* creating a playlist of albums
+* selecting 1+ random collection of objects
 
 Resources:
     * csv code/advice from https://www.geeksforgeeks.org/python/working-csv-files-python/
