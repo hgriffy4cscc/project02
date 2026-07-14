@@ -4,7 +4,7 @@ import csv
 
 class LPCollection:
 
-    def __init__(self) -> None:
+    def __init__(self,settings) -> None:
         self.settings = Settings()
         self.title = ""
         self.fields: dict = {}
