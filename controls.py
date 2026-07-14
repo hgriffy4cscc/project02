@@ -32,7 +32,7 @@ class Controls:
             self.for_what = self.settings.for_what
 
     def _get_how_many(self):
-        raw_how_many = input(f"How many results would you like? [enter for default {self.settings.how_many}]: ")
+        raw_how_many = input(f"How many results would you like? [0 for all, enter for default {self.settings.how_many}]: ")
         # integer-checking code adapted from
         # https://www.geeksforgeeks.org/python/check-if-string-is-integer-in-python/
         if len(raw_how_many) == 0:
