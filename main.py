@@ -12,3 +12,4 @@ if __name__ == '__main__':
     lp_collection.get_the_data()
     controls.do_menu_and_response()
     lp_collection.search_lpcollection(controls)
+    lp_collection.output_results()

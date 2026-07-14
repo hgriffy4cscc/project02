@@ -9,6 +9,7 @@ class LPCollection:
         self.title = ""
         self.fields: dict = {}
         self.lpcollection: list = []
+        self.matching_indexes: list[int] = []
 
     def get_the_data(self):
         """
@@ -41,12 +42,32 @@ class LPCollection:
         Returns:
             matching_indexes: list of indexes for matching dictionary items in lps list
         """
-        matching_indexes: list[int] = []
         for i, lp in enumerate(self.lpcollection):
             # h/t https://www.geeksforgeeks.org/python/enumerate-in-python/
             if controls.for_what.lower() in getattr(lp, self.settings.field_dict[controls.do_what]).lower():
-                matching_indexes.append(i)
-        return matching_indexes[:controls.how_many]
+                self.matching_indexes.append(i)
+
+    
+    ###### OUTPUT RESULTING MATCHES ######
+    def output_results(self):
+        """
+        Outputs matched lps items
+
+        Args:
+            none, but uses the following variables from outer scope(s)
+            matching_indexes: indexes for lps that match search
+            fields: the list of fields in the dataset
+            lps: dictionary of the dataset
+
+        Side-effect:
+            output to the terminal
+        """
+        #print(f"Responses were: {do_what} :: {for_what} :: {how_many}")
+        #print(f"Matching indexes: {matching_indexes}")
+        for i in self.matching_indexes:
+            print(f"{'_'*80}")
+            for f in self.fields:
+                print(f"{f}: {getattr(self.lpcollection[i],f)}")
 
     def __repr__(self) -> str:
         return f"Total no. of rows: {len(self.lpcollection)}"  # Row count
