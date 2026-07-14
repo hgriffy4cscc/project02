@@ -8,3 +8,7 @@ class Settings:
         self.do_what: str = 't'
         self.for_what: str = 'blue'
         self.how_many: int = 5
+        self.field_dict: dict = {
+            'a': 'who',
+            't': 'what'
+        }

@@ -26,5 +26,27 @@ class LPCollection:
             for row in csvreader:     # Read rows
                 self.lpcollection.append(LP(row))
 
+    ###### FIND MATCHING LPS ######
+    def search_lpcollection(self,controls) -> list[int]:
+        """
+        Return up to maximum number of lps where title matches the given search string.
+
+        Args:
+            none but uses the folling variables from outer scope(s)
+            lps: list of dictionaries for dataset
+            search_field: the field to be searched
+            for_what: the search string provided by user
+            how_many: maximum number of matches to return
+
+        Returns:
+            matching_indexes: list of indexes for matching dictionary items in lps list
+        """
+        matching_indexes: list[int] = []
+        for i, lp in enumerate(self.lpcollection):
+            # h/t https://www.geeksforgeeks.org/python/enumerate-in-python/
+            if controls.for_what.lower() in getattr(lp, self.settings.field_dict[controls.do_what]).lower():
+                matching_indexes.append(i)
+        return matching_indexes[:controls.how_many]
+
     def __repr__(self) -> str:
         return f"Total no. of rows: {len(self.lpcollection)}"  # Row count

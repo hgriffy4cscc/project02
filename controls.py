@@ -55,5 +55,5 @@ class Controls:
 
         self._get_for_what()
         self._get_how_many()
-        print(f"Gathered values are: do_what: {self.do_what} + for_what: {self.for_what} + how_many: {self.how_many}")
+#        print(f"Gathered values are: do_what: {self.do_what} + for_what: {self.for_what} + how_many: {self.how_many}")
 

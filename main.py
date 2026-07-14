@@ -11,3 +11,4 @@ if __name__ == '__main__':
     lp_collection = LPCollection(settings)
     lp_collection.get_the_data()
     controls.do_menu_and_response()
+    lp_collection.search_lpcollection(controls)
