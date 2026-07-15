@@ -29,47 +29,9 @@ matching_indexes = []
 
 
 
-###### FIND MATCHING LPS ######
-def search_lps() -> list[int]:
-    """
-    Return up to maximum number of lps where title matches the given search string.
 
-    Args:
-        none but uses the folling variables from outer scope(s)
-        lps: list of dictionaries for dataset
-        search_field: the field to be searched
-        for_what: the search string provided by user
-        how_many: maximum number of matches to return
 
-    Returns:
-        matching_indexes: list of indexes for matching dictionary items in lps list
-    """
-    for i, lp in enumerate(lps):
-        # h/t https://www.geeksforgeeks.org/python/enumerate-in-python/
-        if for_what.lower() in lp[search_field].lower():
-            matching_indexes.append(i)
-    return matching_indexes[:how_many]
 
-###### OUTPUT RESULTING MATCHES ######
-def output_results():
-    """
-    Outputs matched lps items
-
-    Args:
-        none, but uses the following variables from outer scope(s)
-        matching_indexes: indexes for lps that match search
-        fields: the list of fields in the dataset
-        lps: dictionary of the dataset
-
-    Side-effect:
-        output to the terminal
-    """
-    #print(f"Responses were: {do_what} :: {for_what} :: {how_many}")
-    #print(f"Matching indexes: {matching_indexes}")
-    for i in matching_indexes:
-        print(f"{'_'*80}")
-        for f in fields:
-            print(f"{f}: {lps[i][f]}")
 
 ###### MAIN BLOCK OF CODE ######
 #start the ball rolling by getting the data

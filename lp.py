@@ -10,8 +10,10 @@ class LP(Recording):
         for k in lp_data:
             setattr(self, k, lp_data[k])
     
-    def output_for_catalog(self):
-        return super().output_for_catalog()
+    def output_for_catalog(self,lpcollection):
+        print(f"{'_'*80}")
+        for fld in lpcollection.fields:
+            print(f"{fld}: {getattr(self,fld)}")
     
     def add_to_playlist(self, playlist):
         return super().add_to_playlist(playlist)

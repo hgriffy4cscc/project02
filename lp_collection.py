@@ -7,7 +7,7 @@ class LPCollection:
     def __init__(self,settings) -> None:
         self.settings = Settings()
         self.title = ""
-        self.fields: dict = {}
+        self.fields: list = []
         self.lpcollection: list = []
         self.matching_indexes: list[int] = []
 
@@ -22,10 +22,10 @@ class LPCollection:
         
         with open(self.settings.source_file, 'r', encoding='cp1252') as csvfile:
             csvreader = csv.DictReader(csvfile)  # Reader object
-
-            self.fields = next(csvreader)  # Read header
+            self.fields = csvreader.fieldnames
             for row in csvreader:     # Read rows
                 self.lpcollection.append(LP(row))
+            
 
     ###### FIND MATCHING LPS ######
     def search_lpcollection(self,controls) -> list[int]:
@@ -47,7 +47,6 @@ class LPCollection:
             if controls.for_what.lower() in getattr(lp, self.settings.field_dict[controls.do_what]).lower():
                 self.matching_indexes.append(i)
 
-    
     ###### OUTPUT RESULTING MATCHES ######
     def output_results(self):
         """
@@ -63,11 +62,29 @@ class LPCollection:
             output to the terminal
         """
         #print(f"Responses were: {do_what} :: {for_what} :: {how_many}")
-        #print(f"Matching indexes: {matching_indexes}")
+        print(f"There were {len(self.matching_indexes)} results:")
         for i in self.matching_indexes:
-            print(f"{'_'*80}")
-            for f in self.fields:
-                print(f"{f}: {getattr(self.lpcollection[i],f)}")
+            self.lpcollection[i].output_for_catalog(self)
 
     def __repr__(self) -> str:
         return f"Total no. of rows: {len(self.lpcollection)}"  # Row count
+
+class Playlist(LPCollection):
+    """
+    """
+    def __init__(self, settings, full_collection):
+        super().__init__(settings)
+        self.lpcollection = full_collection.lpcollection
+        self.fields = full_collection.fields
+        
+    ##### BUILD A RANDOMIZED PLAYLIST #####
+    def build_random_playlist(self,controls):
+        import random
+        self.matching_indexes = []
+        for i in range(controls.how_many):
+            self.matching_indexes.append(random.randrange(len(self.lpcollection)))
+
+    ##### EXPORT TO FILE #####
+    def export_to_file(self):
+        from pathlib import Path
+        

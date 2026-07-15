@@ -18,11 +18,11 @@ class Controls:
         is_get_do_what_valid = False
         while not is_get_do_what_valid:
             raw_do_what = input(f"What would you like to do? [enter for default {self.settings.do_what}]\n" \
-                               "q to quit, a to search by artist, t to search by title: ").lower()
+                               "q to quit, a to search by artist, t to search by title, r to build random playlist: ").lower()
             if len(raw_do_what) == 0:
                 self.do_what = self.settings.do_what
                 is_get_do_what_valid = True
-            elif len(raw_do_what) == 1 and raw_do_what in 'qat':
+            elif len(raw_do_what) == 1 and raw_do_what in 'qatr':
                 self.do_what = raw_do_what
                 is_get_do_what_valid = True
 
@@ -52,8 +52,9 @@ class Controls:
 
         if self.do_what == 'q':  #if user quitting, don't prompt for additional input
             return False
-
-        self._get_for_what()
-        self._get_how_many()
-#        print(f"Gathered values are: do_what: {self.do_what} + for_what: {self.for_what} + how_many: {self.how_many}")
-
+        elif self.do_what in 'at':
+            self._get_for_what()
+            self._get_how_many()
+        elif self.do_what == 'r':
+            self._get_how_many()
+        #print(f"Gathered values are: do_what: {self.do_what} + for_what: {self.for_what} + how_many: {self.how_many}")
