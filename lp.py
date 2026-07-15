@@ -11,9 +11,12 @@ class LP(Recording):
             setattr(self, k, lp_data[k])
     
     def output_for_catalog(self,lpcollection):
-        print(f"{'_'*80}")
+        output = f"{'_'*80}\n"
         for fld in lpcollection.fields:
-            print(f"{fld}: {getattr(self,fld)}")
+            if getattr(self,fld): # don't print empty fields
+                output += f"{fld}: {getattr(self,fld)}\n"
+        print(output)
+        return output
     
     def add_to_playlist(self, playlist):
         return super().add_to_playlist(playlist)

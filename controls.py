@@ -10,6 +10,8 @@ class Controls:
         self.do_what: str = settings.do_what
         self.for_what: str = settings.for_what
         self.how_many: int = settings.how_many
+        self.save_file: bool = False
+        self.save_file_path_txt: str = ""
 
         ###### READ DATA FROM CSV ######
 
@@ -58,3 +60,22 @@ class Controls:
         elif self.do_what == 'r':
             self._get_how_many()
         #print(f"Gathered values are: do_what: {self.do_what} + for_what: {self.for_what} + how_many: {self.how_many}")
+    
+    def ask_to_save_file(self):
+        """Ask user if they want to save a file and prompt for filename if so"""
+        quit_asking = False # need to reset in case of second call
+        while not quit_asking:
+            pre_save_file = input("Would you like me to save these results for you as a file? y/n")
+            if pre_save_file.lower() == 'y':
+                self.save_file = 1
+                quit_asking = True
+            elif pre_save_file.lower() == 'n':
+                quit_asking = True
+            else:
+                print("I'm sorry but I need a y or n to proceed")
+        if self.save_file:
+            self.save_file_path_txt = ""
+            while not self.save_file_path_txt:
+                self.save_file_path_txt = input("What would you like to call that file? (.json extension will be added)")
+                #NEED TO IMPLEMENT SOME KIND OF VALIDATION FOR THE FILENAME
+        return self.save_file

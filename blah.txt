@@ -1,0 +1,24 @@
+Here is a random playlist with 5 albums.________________________________________________________________________________
+who: Henry Mancini 
+what: Everybodys Favorite
+isCopy2: 0
+________________________________________________________________________________
+who: Donovan 
+what: Donovan 1977
+isCopy2: 0
+________________________________________________________________________________
+who: Bessie Smith 
+what: Any Womans Blues
+isCopy2: 0
+pub: Columbia
+pubnum: G 30126
+discogs_url: http://discogs.com//Bessie-Smith-Any-Womans-Blues/release/10139171
+________________________________________________________________________________
+who: Fritz Reiner 
+what: Bach Six Brandenburg Concerti Vol 2
+isCopy2: 0
+________________________________________________________________________________
+who: Claude Bolling 
+what: Suite for Chamber Orchestra and Jazz Piano Trio
+isCopy2: 0
+discogs_url: https://www.discogs.com/Claude-Bolling-English-Chamber-Orchestra-Jean-Pierre-Rampal-Suite-For-Chamber-Orchestra-And-Jazz-Pia/release/2684664
