@@ -1,3 +1,4 @@
+"""class to store settings variables and defaults"""
 from pathlib import Path
 
 class Settings:

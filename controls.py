@@ -1,5 +1,6 @@
-from settings import Settings
+"""class to manage user interactions"""
 from pathlib import Path
+from settings import Settings
 
 class Controls:
     """class to handle user interactions"""
@@ -20,8 +21,10 @@ class Controls:
     def _get_do_what(self):
         is_get_do_what_valid = False
         while not is_get_do_what_valid:
-            raw_do_what = input(f"What would you like to do? [enter for default {self.settings.do_what}]\n" \
-                               "q to quit, a to search by artist, t to search by title, r to build random playlist: ").lower()
+            raw_do_what = input("What would you like to do? "
+                                f"[enter for default {self.settings.do_what}]\n"
+                                "q to quit, a to search by artist, t to search by title, "
+                                "r to build random playlist: ").lower()
             if len(raw_do_what) == 0:
                 self.do_what = self.settings.do_what
                 is_get_do_what_valid = True
@@ -30,12 +33,14 @@ class Controls:
                 is_get_do_what_valid = True
 
     def _get_for_what(self):
-        self.for_what: str = input(f"Enter text to search for: [enter for default {self.settings.for_what}] ")
+        self.for_what: str = input("Enter text to search for: " \
+                                   f"[enter for default {self.settings.for_what}] ")
         if not self.for_what:
             self.for_what = self.settings.for_what
 
     def _get_how_many(self):
-        raw_how_many = input(f"How many results would you like? [0 for all, enter for default {self.settings.how_many}]: ")
+        raw_how_many = input("How many results would you like? "
+                             f"[0 for all, enter for default {self.settings.how_many}]: ")
         # integer-checking code adapted from
         # https://www.geeksforgeeks.org/python/check-if-string-is-integer-in-python/
         if len(raw_how_many) == 0:
@@ -60,15 +65,16 @@ class Controls:
             self._get_how_many()
         elif self.do_what == 'r':
             self._get_how_many()
-        #print(f"Gathered values are: do_what: {self.do_what} + for_what: {self.for_what} + how_many: {self.how_many}")
-    
+        #print(f"Gathered values are: do_what: {self.do_what} + ""
+        #       f"for_what: {self.for_what} + how_many: {self.how_many}")
+
     def ask_to_save_file(self):
         """Ask user if they want to save a file and prompt for filename if so"""
         quit_asking = False # need to reset in case of second call
         while not quit_asking:
             pre_save_file = input("Would you like me to save these results for you as a file? y/n ")
             if pre_save_file.lower() == 'y':
-                self.save_file = 1
+                self.save_file = True
                 quit_asking = True
             elif pre_save_file.lower() == 'n':
                 quit_asking = True
@@ -77,9 +83,11 @@ class Controls:
         if self.save_file:
             self.save_file_path_txt = ""
             while not self.save_file_path_txt:
-                self.save_file_path_txt = input("What would you like to call that file? (.txt extension will be added): ")
+                self.save_file_path_txt = input("What would you like to call that file? "
+                                                "(.txt extension will be added): ")
                 if Path(self.save_file_path_txt + ".txt").exists():
-                    confirm_overwrite = input("That file exists. Would you like to overwrite it? y for overwrite ").lower()
+                    confirm_overwrite = input("That file exists. Would you like to overwrite it? "
+                                              "y for overwrite ").lower()
                     if confirm_overwrite.lower() != 'y':
                         self.save_file_path_txt = ""
                 #NEED TO IMPLEMENT SOME KIND OF VALIDATION FOR THE FILENAME
