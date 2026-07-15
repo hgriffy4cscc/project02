@@ -1,24 +1,50 @@
-Here is a random playlist with 5 albums.________________________________________________________________________________
-who: Henry Mancini 
-what: Everybodys Favorite
+Here is a random playlist with 10 albums.
+________________________________________________________________________________
+who: John Lennon 
+what: Imagine
 isCopy2: 0
 ________________________________________________________________________________
-who: Donovan 
-what: Donovan 1977
+who: Soundtrack 
+what: The Sound of Music
 isCopy2: 0
 ________________________________________________________________________________
-who: Bessie Smith 
-what: Any Womans Blues
+who: Columbia Masterworks 
+what: Treasure Island
 isCopy2: 0
-pub: Columbia
-pubnum: G 30126
-discogs_url: http://discogs.com//Bessie-Smith-Any-Womans-Blues/release/10139171
+pub: Columbia Masterworks
+pubnum: MM 553
+year: 1946
+discogs_url: http://discogs.com//Basil-Rathbone-Treasure-Island/release/10923990
 ________________________________________________________________________________
-who: Fritz Reiner 
-what: Bach Six Brandenburg Concerti Vol 2
+who: Miles Davis 
+what: Greatest Hits
 isCopy2: 0
 ________________________________________________________________________________
-who: Claude Bolling 
-what: Suite for Chamber Orchestra and Jazz Piano Trio
+who: Billy Bragg 
+what: Brewing Up With Billy Bragg
 isCopy2: 0
-discogs_url: https://www.discogs.com/Claude-Bolling-English-Chamber-Orchestra-Jean-Pierre-Rampal-Suite-For-Chamber-Orchestra-And-Jazz-Pia/release/2684664
+discogs_url: http://discogs.com//Billy-Bragg-Brewing-Up-With-Billy-Bragg/release/836088
+________________________________________________________________________________
+who: Ed Podolak and his Polka Cats 
+what: Dziesiec Calowy Ogorek
+isCopy2: 0
+________________________________________________________________________________
+who: The Clash 
+what: Give em Enough Rope
+isCopy2: 0
+discogs_url: http://discogs.com//The-Clash-Give-Em-Enough-Rope/release/7610644
+________________________________________________________________________________
+who: Soundtrack 
+what: Henry Sweet Henry
+isCopy2: 0
+________________________________________________________________________________
+who: Bob Newhart 
+what: The Buttondown Mind of Bob Newhart
+isCopy2: 0
+pubnum: W 1379
+discogs_url: http://discogs.com//Bob-Newhart-The-Button-Down-Mind-Of-Bob-Newhart/release/1343341
+________________________________________________________________________________
+who: Ary Cordovil 
+what: The Voice of Ary Cordovil Brazil Now
+isCopy2: 0
+discogs_url: http://discogs.com//Ary-Cordovil-The-Voice-Of-Ary-Cordovil-Brazil-Now/release/7535461

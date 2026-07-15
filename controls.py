@@ -1,4 +1,5 @@
 from settings import Settings
+from pathlib import Path
 
 class Controls:
     """class to handle user interactions"""
@@ -65,7 +66,7 @@ class Controls:
         """Ask user if they want to save a file and prompt for filename if so"""
         quit_asking = False # need to reset in case of second call
         while not quit_asking:
-            pre_save_file = input("Would you like me to save these results for you as a file? y/n")
+            pre_save_file = input("Would you like me to save these results for you as a file? y/n ")
             if pre_save_file.lower() == 'y':
                 self.save_file = 1
                 quit_asking = True
@@ -76,6 +77,10 @@ class Controls:
         if self.save_file:
             self.save_file_path_txt = ""
             while not self.save_file_path_txt:
-                self.save_file_path_txt = input("What would you like to call that file? (.json extension will be added)")
+                self.save_file_path_txt = input("What would you like to call that file? (.txt extension will be added): ")
+                if Path(self.save_file_path_txt + ".txt").exists():
+                    confirm_overwrite = input("That file exists. Would you like to overwrite it? y for overwrite ").lower()
+                    if confirm_overwrite.lower() != 'y':
+                        self.save_file_path_txt = ""
                 #NEED TO IMPLEMENT SOME KIND OF VALIDATION FOR THE FILENAME
         return self.save_file
