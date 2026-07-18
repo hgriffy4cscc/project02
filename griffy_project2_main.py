@@ -24,6 +24,8 @@ Resources:
     * reading csv code/advice from https://www.geeksforgeeks.org/python/working-csv-files-python/
     * avoid pylint error for unused variable in a for loop just needed for count (replace with _):
         https://stackoverflow.com/questions/52792987/unused-variable-in-a-for-loop
+    * simulate input() for pytest:
+        https://www.pythontutorials.net/blog/how-to-test-a-function-with-input-call/
 
 Todo:
     * Testing
@@ -33,8 +35,7 @@ from playlist import RandomPlaylist
 from controls import Controls
 from settings import Settings
 
-
-if __name__ == '__main__':
+def do_the_thing():
     settings = Settings()
     controls = Controls(settings)
     lp_collection = LPCollection(settings)
@@ -54,3 +55,6 @@ if __name__ == '__main__':
             playlist.output_results()
             if controls.ask_to_save_file():
                 playlist.save_results_to_file(controls)
+
+if __name__ == '__main__':
+    do_the_thing()
