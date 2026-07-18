@@ -45,7 +45,7 @@ class LPCollection:
                 self.matching_indexes.append(i)
 
     ###### OUTPUT RESULTING MATCHES ######
-    def output_results(self):
+    def output_results(self, controls):
         """
         Outputs matched lps items
 
@@ -54,7 +54,7 @@ class LPCollection:
         """
         #print(f"Responses were: {do_what} :: {for_what} :: {how_many}")
         print(f"There were {len(self.matching_indexes)} results:")
-        for i in self.matching_indexes:
+        for i in self.matching_indexes[:controls.how_many]:
             self.lpcollection[i].output_for_catalog(self)
 
     def __repr__(self) -> str:
