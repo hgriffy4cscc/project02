@@ -54,7 +54,11 @@ class LPCollection:
         """
         #print(f"Responses were: {do_what} :: {for_what} :: {how_many}")
         print(f"There were {len(self.matching_indexes)} results:")
-        for i in self.matching_indexes[:controls.how_many]:
+        if controls.how_many == 0:
+            self.output_range = self.matching_indexes
+        else:
+            self.output_range = self.matching_indexes[:controls.how_many]
+        for i in self.output_range:
             self.lpcollection[i].output_for_catalog(self)
 
     def __repr__(self) -> str:
