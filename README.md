@@ -1,2 +1,2 @@
-Video Walkthrough (Happy Path): https://youtu.be/V_6VNh7FbbI
-Project Analysis: https://youtu.be/3i6LaP201WQ
+Video Walkthrough (Happy Path): https://youtu.be/uuw0ABC11so
+Project Analysis: https://youtu.be/0Gz5fhZf9cI
